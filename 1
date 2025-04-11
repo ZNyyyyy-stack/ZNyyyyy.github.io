@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI模型介绍</title>
+    <style>
+        :root {
+            --primary-color: #3a86ff;
+            --secondary-color: #8338ec;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        h1 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+        
+        .model-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-header {
+            padding: 1.5rem;
+            background: rgba(58, 134, 255, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .model-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .model-company {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .model-description {
+            margin-bottom: 1rem;
+        }
+        
+        .model-features {
+            list-style-type: none;
+        }
+        
+        .model-features li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .model-features li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: var(--card-shadow);
+        }
+        
+        @media (max-width: 768px) {
+            .models-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>AI模型全解析</h1>
+            <p class="subtitle">探索当今世界领先的人工智能模型及其特性</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="models-grid">
+            <!-- GPT-4 -->
+            <div class="model-card">
+                <div class="card-header">
+                    <h2 class="model-name">GPT-4</h2>
+                    <p class="model-company">OpenAI</p>
+                </div>
+                <div class="card-body">
+                    <p class="model-description">GPT-4是OpenAI推出的大型语言模型，相比前代产品GPT-3.5具有更强的理解和生成能力。</p>
+                    <ul class="model-features">
+                        <li>多模态能力，可处理文本与图像输入</li>
+                        <li>更长的上下文窗口，能处理复杂对话</li>
+                        <li>在逻辑推理和创造性写作方面表现出色</li>
+                        <li>减少了幻觉内容生成，提高了事实准确性</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Claude -->
+            <div class="model-card">
+                <div class="card-header">
+                    <h2 class="model-name">Claude</h2>
+                    <p class="model-company">Anthropic</p>
+                </div>
+                <div class="card-body">
+                    <p class="model-description">Claude是Anthropic公司开发的对话AI助手，以其自然对话能力和对人类价值观的理解而著称。</p>
+                    <ul class="model-features">
+                        <li>专注于"宪法AI"方法，有助于安全和有益的输出</li>
+                        <li>支持长篇上下文，可处理长文档</li>
+                        <li>强大的文本摘要和分析能力</li>
+                        <li>Claude 3系列模型在多项基准测试中表现优异</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- DALL-E 3 -->
+            <div class="model-card">
+                <div class="card-header">
+                    <h2 class="model-name">DALL-E 3</h2>
+                    <p class="model-company">OpenAI</p>
+                </div>
+                <div class="card-body">
+                    <p class="model-description">DALL-E 3是一种先进的文本到图像生成AI，能根据自然语言描述创建高度详细和逼真的图像。</p>
+                    <ul class="model-features">
+                        <li>理解复杂和细节丰富的文本提示</li>
+                        <li>生成高质量、高分辨率的图像</li>
+                        <li>更好地遵循用户意图，包括正确渲染文本</li>
+                        <li>内置安全措施，避免生成有害或不当内容</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Gemini -->
+            <div class="model-card">
+                <div class="card-header">
+                    <h2 class="model-name">Gemini</h2>
+                    <p class="model-company">Google</p>
+                </div>
+                <div class="card-body">
+                    <p class="model-description">Gemini是Google的多模态AI模型，能够同时理解和处理文本、图像、音频、视频和代码。</p>
+                    <ul class="model-features">
+                        <li>原生多模态设计，提供无缝的跨模态理解</li>
+                        <li>提供Ultra、Pro和Nano三种规模的模型</li>
+                        <li>在多项AI基准测试中达到或超越最先进水平</li>
+                        <li>与Google各种产品集成，增强实用性</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Stable Diffusion -->
+            <div class="model-card">
+                <div class="card-header">
+                    <h2 class="model-name">Stable Diffusion</h2>
+                    <p class="model-company">Stability AI</p>
+                </div>
+                <div class="card-body">
+                    <p class="model-description">Stable Diffusion是一种开源的文本到图像生成模型，使用扩散技术创建高质量图像。</p>
+                    <ul class="model-features">
+                        <li>开源设计，允许自由使用和修改</li>
+                        <li>可在消费级GPU上运行</li>
+                        <li>支持图像到图像的编辑和变换</li>
+                        <li>活跃的社区开发和模型微调</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- LLaMA -->
+            <div class="model-card">
+                <div class="card-header">
+                    <h2 class="model-name">LLaMA</h2>
+                    <p class="model-company">Meta</p>
+                </div>
+                <div class="card-body">
+                    <p class="model-description">LLaMA (Large Language Model Meta AI) 是Meta开发的一系列基础大语言模型，为研究和应用提供开放选择。</p>
+                    <ul class="model-features">
+                        <li>提供多种参数规模(7B到70B)的模型版本</li>
+                        <li>经过广泛的文本语料训练</li>
+                        <li>适合微调以适应特定领域或任务</li>
+                        <li>LLaMA 3进一步提升了性能和能力边界</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Midjourney -->
+            <div class="model-card">
+                <div class="card-header">
+                    <h2 class="model-name">Midjourney</h2>
+                    <p class="model-company">Midjourney</p>
+                </div>
+                <div class="card-body">
+                    <p class="model-description">Midjourney是一种AI图像生成服务，通过Discord平台提供，以其独特的艺术风格和高质量输出而闻名。</p>
+                    <ul class="model-features">
+                        <li>生成风格化和艺术性强的图像</li>
+                        <li>支持详细的提示词和参数调整</li>
+                        <li>持续迭代更新，不断改进图像质量</li>
+                        <li>社区驱动的创作环境</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- BERT -->
+            <div class="model-card">
+                <div class="card-header">
+                    <h2 class="model-name">BERT</h2>
+                    <p class="model-company">Google</p>
+                </div>
+                <div class="card-body">
+                    <p class="model-description">BERT (Bidirectional Encoder Representations from Transformers) 是一种预训练的自然语言处理模型，在多种任务中取得了突破性进展。</p>
+                    <ul class="model-features">
+                        <li>双向上下文理解能力</li>
+                        <li>适用于多种NLP任务，如问答和情感分析</li>
+                        <li>为现代语言模型奠定了重要基础</li>
+                        <li>多语言版本支持100多种语言</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Sora -->
+            <div class="model-card">
+                <div class="card-header">
+                    <h2 class="model-name">Sora</h2>
+                    <p class="model-company">OpenAI</p>
+                </div>
+                <div class="card-body">
+                    <p class="model-description">Sora是OpenAI最新发布的文本到视频生成模型，能够通过文本提示创建逼真的高质量视频内容。</p>
+                    <ul class="model-features">
+                        <li>能创建长达一分钟的复杂场景视频</li>
+                        <li>理解复杂的物理世界运动和交互</li>
+                        <li>呈现细节丰富、视觉一致的场景</li>
+                        <li>支持多角色、复杂情节的视频生成</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2024 AI模型全解析 | 本网页仅供学习参考使用</p>
+        </div>
+    </footer>
+    
+    <div class="scroll-to-top" id="scrollToTop">↑</div>
+    
+    <script>
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.style.opacity = '1';
+            } else {
+                scrollToTopBtn.style.opacity = '0';
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
